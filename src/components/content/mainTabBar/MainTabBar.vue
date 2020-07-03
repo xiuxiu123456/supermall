@@ -25,8 +25,8 @@
 
 <script>
 
-import TabBar from "components/common/tabbar/TabBar";
-import TarBarItem from "components/common/tabbar/TarBarItem";
+import TabBar from "components/common/tabbar/TabBar.vue";
+import TarBarItem from "components/common/tabbar/TarBarItem.vue";
 
 export default {
   name: 'MainTabBar',

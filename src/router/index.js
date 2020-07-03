@@ -2,10 +2,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-const Cart = () => import('../views/cart/Cart');
-const Category = () => import('../views/category/Category');
-const Home = () => import('../views/home/Home');
-const Profile = () => import('../views/profile/Profile');
+const Cart = () => import('@/views/cart/Cart.vue');
+const Category = () => import('@/views/category/Category.vue');
+const Home = () => import('@/views/home/Home.vue');
+const Profile = () => import('@/views/profile/Profile.vue');
 
 //1.安装插件
 Vue.use(VueRouter);
@@ -14,27 +14,31 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '',
-    redirect: '/home'
+    redirect: '/home',
   },
   {
     path: '/home',
     // name: '/home',
     component: Home
+    //component: () => import('../views/cart/Cart.vue')
   },
   {
     path: '/category',
     // name: '/category',
     component: Category
+    //component: () => import('../views/cart/Cart.vue')
   },
   {
     path: '/cart',
     // name: '/cart',
     component: Cart
+    //component: () => import('../views/cart/Cart.vue')
   },
   {
     path: '/profile',
     // name: '/profile',
     component: Profile
+    //component: () => import('../views/cart/Cart.vue')
   },
 ];
 
