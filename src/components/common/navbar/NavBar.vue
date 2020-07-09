@@ -3,12 +3,14 @@
     <div class="left"><slot name="left"></slot></div>
     <div class="center"><slot name="center"></slot></div>
     <div class="right"><slot name="right"></slot></div>
+    <!-- <div v-bind:style="{ color: color, fontSize: fontObj.size + 'px'}" @click="changeParent">{{fontObj.name}}</div> -->
   </div>
 </template>
 
 <script>
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+
 }
 </script>
 

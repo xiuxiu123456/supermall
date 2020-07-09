@@ -1,8 +1,9 @@
 <template>
   <div id="home">
-    <NavBar class="home-nav">
-      <div slot="center">Shopping</div>
+    <NavBar  class="home-nav" >
+      <div slot="center" >Shopping</div>
     </NavBar>
+    
     <div class="container">
       <swiper ref="mySwiper" :options="swiperOptions">
         <swiper-slide v-for="(item,index) in list" :key="index">
@@ -16,11 +17,9 @@
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
       <div class="direct-img"><img :src="directImg.imgSrc" alt=""></div>
-      <div class="products-item">
-        <span>流行</span>
-        <span>新款</span>
-        <span>精选</span>
-      </div>
+      <TabControl class="tabControl" :titles="['流行','新款','精选']">
+        
+      </TabControl>
       <div>
         <ul>
           <li>fff</li>
@@ -32,7 +31,29 @@
           <li>fff</li>
           <li>fff</li>
           <li>fff</li>
-          <li>fff</li><li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
+          <li>fff</li>
           <li>fff</li>
           <li>fff</li>
           <li>fff</li>
@@ -50,13 +71,16 @@
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import NavBar from '../../components/common/navbar/NavBar.vue'
+import TabControl from '../../components/content/tabControl/TabControl.vue'
+
 // import {getHomeMultidata} from '../../network/home'
 export default {
   name: 'Home',
   components: {
     NavBar,
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    TabControl
   },
   data() {
     return {
@@ -65,31 +89,32 @@ export default {
         username: 'sz777',
         password: '1234',
       },
+      
       list:[
         {
-          title:'新闻1',
-          content: '新闻头条1',
+          title:'图片1',
+          content: '这是第一张图片1',
           bgColor: 'red',
           detailUrl: 'https://www.baidu.com',
-          imgSrc:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=848977934,2090865154&fm=26&gp=0.jpg'
+          imgSrc:'http://01.minipic.eastday.com/20170330/20170330044723_a0c69f758cc90e87e8c8e620eb55308e_2.jpeg'
         },
         {
-          title:'新闻2',
-          content: '新闻头条2',
+          title:'图片2',
+          content: '这是第二张图片2',
           bgColor: 'orange',
           detailUrl: 'https://www.w3school.com.cn/',
-          imgSrc:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=848977934,2090865154&fm=26&gp=0.jpg'
+          imgSrc:'https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1392974587,4137238&fm=26&gp=0.jpg'
         },
         {
-          title:'新闻3',
-          content: '新闻头条3',
+          title:'图片3',
+          content: '这是第三张图片3',
           bgColor: 'green',
           detailUrl: 'https://www.iconfont.cn/search/index?q=%E9%A6%96%E9%A1%B5',
-          imgSrc:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=848977934,2090865154&fm=26&gp=0.jpg'
+          imgSrc:'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1926836966,2010107208&fm=26&gp=0.jpg'
         }
       ],
       directImg:{
-        imgSrc: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=848977934,2090865154&fm=26&gp=0'
+        imgSrc: 'http://img3.imgtn.bdimg.com/it/u=106602438,2685454593&fm=26&gp=0.jpg'
       },
       swiperOptions: {
         //自动播放
@@ -106,6 +131,7 @@ export default {
     }
   },
   methods: {
+    
     imgClick(url) {
       //跳转到外部地址
       // let url = 'https://image.baidu.com/'
@@ -168,8 +194,10 @@ export default {
   .title{
     font-size: 20px;
     font-weight: bold;
+    color: aqua;
   }
   .content{
+    color: aqua;
     margin-top: 40px;
   }
   .swipper-box .active{
@@ -182,13 +210,8 @@ export default {
   overflow: auto;
     flex: 1;
 }
-.products-item{
-  display: flex;
-  text-align: center;
-  line-height: 20px;
-  margin: 10px 0 10px 0;
+.direct-img img{
+  width: 100%;
 }
-.products-item span{
-  flex: 1;
-}
+
 </style>
