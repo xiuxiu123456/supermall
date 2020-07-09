@@ -16,52 +16,12 @@
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
-      <div class="direct-img"><img :src="directImg.imgSrc" alt=""></div>
+      <div class="direct-img" @click="toNumproject"><img :src="directImg.imgSrc" alt=""></div>
       <TabControl class="tabControl" :titles="['流行','新款','精选']">
         
       </TabControl>
       <div>
-        <ul>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-          <li>fff</li>
-        </ul> 
+        
       </div>
     </div>
   </div>
@@ -137,19 +97,23 @@ export default {
       // let url = 'https://image.baidu.com/'
       location.href=url
       // this.$router.replace('/category')
+    },
+    toNumproject(){
+      this.$router.push('/numProject')
     }
   },
+  
   created() {
     //1.请求多个数据
-    this.$axios.post(
-      '/login',
-      {
-        username: 'sz777',
-        password: '1234'
-      }
-    ).then((res) => {
-      console.log(res);
-    })
+    // this.$axios.post(
+    //   '/login',
+    //   {
+    //     username: 'sz777',
+    //     password: '1234'
+    //   }
+    // ).then((res) => {
+    //   console.log(res);
+    // })
 
         
     // getHomeMultidata(this.req)

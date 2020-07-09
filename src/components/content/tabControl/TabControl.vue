@@ -11,54 +11,10 @@
     </div>
     <div class="c-detail">
      <div v-show="currentIndex==0">
-      <!-- <table>
-        <tr>
-          <td>
-            <img src="~assets/img/0.jpg" alt="">
-            <p>商品的一些详细描述</p>
-            <h4>39.99</h4>
-          </td>
-          <td>
-            <img src="~assets/img/0.jpg" alt="">
-            <p>商品的一些详细描述</p>
-            <h4>39.99</h4>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="~assets/img/0.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>39.99</h4>
-          </td>
-          <td><img src="~assets/img/0.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>39.99</h4>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="~assets/img/0.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>39.99</h4>
-          </td>
-          <td><img src="~assets/img/0.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>39.99</h4>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="~assets/img/0.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>39.99</h4>
-          </td>
-          <td><img src="~assets/img/0.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>39.99</h4>
-          </td>
-        </tr>
-      </table> -->
       <ul class="detailsUl">
         <li v-for="(item,index) in tabList1" :key="index" class="tablist1">
           <div class="list1">
-            <div><img :src="require(`../../../assets/img/${index}.jpg`)" alt=""></div>
+            <div class="imgBox"><img :src="require(`../../../assets/img/${index}.jpg`)" alt=""></div>
             <div class="list1-descript">{{item.descript}}</div>
             <div class="list1-price">{{item.price}}</div>
           </div>
@@ -68,49 +24,6 @@
     
     </div>
     <div v-show="currentIndex==1">
-      <!-- <table>
-        <tr>
-          <td>
-            <img src="~assets/img/1.jpg" alt="">
-            <p>商品的一些详细描述</p>
-            <h4>66.99</h4>
-          </td>
-          <td><img src="~assets/img/1.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>66.99</h4>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="~assets/img/1.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>66.99</h4>
-          </td>
-          <td><img src="~assets/img/1.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>66.99</h4>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="~assets/img/1.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>66.99</h4>
-          </td>
-          <td><img src="~assets/img/1.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>66.99</h4>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="~assets/img/1.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>66.99</h4>
-          </td>
-          <td><img src="~assets/img/1.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>66.99</h4>
-          </td>
-        </tr>
-      </table> -->
       <ul class="detailsUl">
         <li v-for="(item,index) in tabList2" :key="index" class="tablist1">
           <div class="list1">
@@ -119,64 +32,10 @@
             <div class="list1-price">{{item.price}}</div>
           </div>
         </li>
-      </ul>
-      
+      </ul> 
     </div>
     <div v-show="currentIndex==2">
-      <!-- <table>
-        <ul>
-          <li v-for="tableData "></li>
-        </ul>
-        <tr>
-          <td><img src="~assets/img/2.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>100.00</h4>
-          </td>
-          <td><img src="~assets/img/2.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>100.00</h4>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="~assets/img/2.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>100.00</h4>
-          </td>
-          <td><img src="~assets/img/2.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>100.00</h4>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="~assets/img/2.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>100.00</h4>
-          </td>
-          <td><img src="~assets/img/2.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>100.00</h4>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="~assets/img/2.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>100.00</h4>
-          </td>
-          <td><img src="~assets/img/2.jpg" alt="">
-          <p>商品的一些详细描述</p>
-            <h4>100.00</h4>
-          </td>
-        </tr>
-      </table> -->
-      <ul class="detailsUl">
-        <li v-for="(item,index) in tabList2" :key="index" class="tablist1">
-          <div class="list1">
-            <div><img :src="require(`../../../assets/img/${index}.jpg`)" alt=""></div>
-            <div class="list1-descript">{{item.descript}}</div>
-            <div class="list1-price">{{item.price}}</div>
-          </div>
-        </li>
-      </ul>
+      3333
     </div>
     </div>
   </div>
@@ -283,6 +142,9 @@ export default {
 .list1{
   margin: 5px;
 }
+.list1 .imgBox{
+  height: 160px;
+}
 .list1-descript{
   text-align: center;
     margin: 5px 0px;
@@ -294,6 +156,7 @@ export default {
 }
 .list1 img{
   width: 100%;
+  height: 100%;;
 }
 
 </style>

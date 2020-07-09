@@ -42,27 +42,27 @@ module.exports = {
     //     modules: false // 启用 CSS modules for all css / pre-processor files.
     // },
     // webpack-dev-server 相关配置
-    devServer: {
-        // open: process.platform === 'darwin',
-        // host: '0.0.0.0', // 允许外部ip访问
-        port: 8022, // 端口
-        https: false, // 启用https
-        disableHostCheck: true,
-        overlay: {
-            warnings: true,
-            errors: true
-        }, // 错误、警告在页面弹出
-        proxy: {
-            '/': {
-                target: 'http://119.23.213.249:80',
-                changeOrigin: true, // 允许websockets跨域
-                // ws: true,
-                // pathRewrite: {31.246
-                //     '^/api': ''
-                // }
-            }
-        } // 代理转发配置，用于调试环境
-    },
+    // devServer: {
+    //     // open: process.platform === 'darwin',
+    //     // host: '0.0.0.0', // 允许外部ip访问
+    //     port: 8022, // 端口
+    //     https: false, // 启用https
+    //     disableHostCheck: true,
+    //     overlay: {
+    //         warnings: true,
+    //         errors: true
+    //     }, // 错误、警告在页面弹出
+    //     // proxy: {
+    //     //     '/': {
+    //     //         target: 'http://119.23.213.249:80',
+    //     //         changeOrigin: true, // 允许websockets跨域
+    //     //         // ws: true,
+    //     //         // pathRewrite: {31.246
+    //     //         //     '^/api': ''
+    //     //         // }
+    //     //     }
+    //     // } // 代理转发配置，用于调试环境
+    // },
     // 第三方插件配置
     pluginOptions: {}
 }
