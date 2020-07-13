@@ -5,11 +5,12 @@
           :key="index" 
           class="products-item"
           :class="{active: index === currentIndex}"
-          @click="btnItemClick(index)">     
-        <span>{{item}}</span>
+          @click="btnItemClick(index,item.tabPath)">
+        <span>{{item.tabName}}</span>
       </div>
     </div>
-    <div class="c-detail">
+    
+    <!-- <div class="c-detail">
      <div v-show="currentIndex==0">
       <ul class="detailsUl">
         <li v-for="(item,index) in tabList1" :key="index" class="tablist1">
@@ -34,10 +35,10 @@
         </li>
       </ul> 
     </div>
-    <div v-show="currentIndex==2">
-      3333
+    <div v-show="currentIndex==2" >
+      
     </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -102,8 +103,9 @@ export default {
     }
   },
   methods: {
-    btnItemClick(index) {
-      this.currentIndex = index
+    btnItemClick(index, tabPath) {
+      this.currentIndex = index;
+      this.$router.push(tabPath)
     }
   }
 }

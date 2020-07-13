@@ -17,7 +17,7 @@
               <li v-for="(item,index) in numList" :key="index" :class="{active: item.flag=='1'}">
                 <div class="box-num">
                   <div class="money-num">{{item.money}}<span v-if="item.flag == '0'">元</span></div>
-                  <div class="money-je"><span class="jg-text" v-if="item.flag == '0'">券后价：</span>{{item.price}}<span></span></div>
+                  <div class="money-je"><span class="jg-text" v-if="item.flag == '0'">券后价：</span>{{item.price}}</div>
                 </div>
               </li>
             </ul>

@@ -17,11 +17,16 @@
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
       <div class="direct-img" @click="toNumproject"><img :src="directImg.imgSrc" alt=""></div>
-      <TabControl class="tabControl" :titles="['流行','新款','精选']">
-        
+      <TabControl class="tabControl" :titles="tabList">
       </TabControl>
-      <div>
-        
+       
+      <div class="tabBottom">
+        <!-- <ul>
+            <li><router-link to="/home/homePop">Work1</router-link></li>
+            <li><router-link to="/home/homeNew">Work2</router-link></li>
+            <li><router-link to="/home/homeChoice">Work3</router-link></li>
+        </ul> -->
+        <router-view></router-view> 
       </div>
     </div>
   </div>
@@ -49,7 +54,20 @@ export default {
         username: 'sz777',
         password: '1234',
       },
-      
+      tabList:[
+        {
+          tabName: '流行',
+          tabPath: '/home/homePop'
+        },
+        {
+          tabName: '新款',
+          tabPath: '/home/homeNew'
+        },
+        {
+          tabName: '精选',
+          tabPath: '/home/homeChoice'
+        }
+      ],
       list:[
         {
           title:'图片1',
@@ -90,8 +108,7 @@ export default {
       }
     }
   },
-  methods: {
-    
+  methods: {  
     imgClick(url) {
       //跳转到外部地址
       // let url = 'https://image.baidu.com/'
@@ -137,13 +154,13 @@ export default {
 <style>
 #home{
   position: absolute;
-    top: 0;
-    bottom: 44px;
-    left: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  top: 0;
+  bottom: 44px;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
   .home-nav{
     background-color: var(--color-text);

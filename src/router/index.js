@@ -3,8 +3,15 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 const Cart = () => import('@/views/cart/Cart.vue');
+
 const Category = () => import('@/views/category/Category.vue');
+const Detail = () => import('@/views/category/Detail.vue');
+
 const Home = () => import('@/views/home/Home.vue');
+const HomeChoice = () => import('@/views/home/HomeChoice.vue');
+const HomeNew = () => import('@/views/home/HomeNew.vue');
+const HomePop = () => import('@/views/home/HomePop.vue');
+
 const Profile = () => import('@/views/profile/Profile.vue');
 const numProject = () => import('@/views/numProject.vue');
 //1.安装插件
@@ -18,15 +25,35 @@ const routes = [
   },
   {
     path: '/home',
-    // name: '/home',
-    component: Home
-    //component: () => import('../views/cart/Cart.vue')
+    component: Home,
+    children: [
+      {
+        path: '',
+        redirect: '/home/homePop'
+      },
+      {
+        path: "homePop",
+        component: HomePop
+      },
+      {
+        path: "homeNew",
+        component: HomeNew
+      },
+      {
+        path: "homeChoice",
+        component: HomeChoice
+      },
+    ]
   },
   {
     path: '/category',
     // name: '/category',
     component: Category
     //component: () => import('../views/cart/Cart.vue')
+  },
+  {
+    path: '/detail',
+    component: Detail
   },
   {
     path: '/cart',
