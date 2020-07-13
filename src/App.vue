@@ -16,13 +16,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scope>
  #app{
    overflow: hidden;
    position: relative;
     width: 100%;
     height: 100%;
 }
-@import './assets/css/base.css'
 
 </style>

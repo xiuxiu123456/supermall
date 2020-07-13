@@ -2,7 +2,7 @@
 
   <div id="category">
     <NavBar class="category-nav">
-      <div slot="left"><img src="~assets/img/fanhui.png" alt=""></div>
+      <div slot="left" @click="returnHome"><img src="~assets/img/fanhui.png" alt=""></div>
       <div slot="center" class="nav-text">
         <ul>
           <li v-for="(item,index) in navList" :key="index">
@@ -147,7 +147,10 @@ export default {
     detailClick(item,index) {
       console.log(99999999999);
       this.$router.push({path:'/detail',query:{detailId:index}})
-    } 
+    },
+    returnHome(){
+      this.$router.push('/home/homePop')
+    }
   },
   mounted() {
     // this.scroll = new BScroll(document.querySelector('.content33'),{

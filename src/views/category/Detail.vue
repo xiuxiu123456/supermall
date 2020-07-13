@@ -1,6 +1,6 @@
 <template>
   <div class="details">
-    <div class="return">返回</div>
+    <div class="return" @click="returnCategory">返回</div>
     <swiper ref="mySwiper" :options="swiperOptions">
       <swiper-slide v-for="(item,index) in detailList" :key="index">
         <div class="detail-img">
@@ -98,7 +98,7 @@
       <div class="col">
       <img :src="require(`../../assets/img/detailimg/收藏.png`)" alt="">
       </div>
-      <div class="join">加入购物车</div>
+      <div class="join" @click="joinClick">加入购物车</div>
       <div class="buy">
         <div class="let-buy">领券购买</div>
         <div class="last-buy">券后 ￥ 56.2</div>
@@ -193,7 +193,15 @@ export default {
     mounted() {
       console.log('Current Swiper instance object', this.swiper)
       this.swiper.slideTo(3, 1000, false)
+    },
+  methods: {
+    returnCategory(){
+      this.$router.push("/category")
+    },
+    joinClick() {
+      this.$router.push("/cart")
     }
+  }
 }
 </script>
 
@@ -219,7 +227,7 @@ export default {
   line-height: 40px;
 }
 .details{
-  background: #ececf7;;
+  background: #ececf7;
   position: fixed;
   top: 0px;
   width: 100%;

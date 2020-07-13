@@ -5,6 +5,7 @@ import App from './App.vue';
 import router from './router';
 import axios from './network/request';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
+import './assets/css/base.css';
 
 // import style
 import 'swiper/css/swiper.css';
