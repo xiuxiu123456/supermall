@@ -6,12 +6,12 @@
       </div>
       <div class="car-list">
         <div class="shopMes">
-          <div class="cicle"></div>
+          <div class="cicle" @click="addClass" :class="{ activeClass : isActive}"></div>
           <div class="information">信用购物旗舰店铺<span>></span></div>
           <div class="car-cou">领券</div>
         </div>
         <div class="goodsMes">
-          <div class="cicle1"></div>
+          <div class="cicle1" @click="addClass" :class="{ activeClass : isActive}"></div>
           <div class="goods-img"><img :src="require(`../../assets/img/cart/购物车.png`)" alt=""></div>
           <div class="goods-infor">
             <div class="infot-text">2020夏季新款短袖T恤女<br>休闲后背樱花小个子宽松韩版白色女衣服</div>
@@ -23,13 +23,13 @@
                 </select>
               </div>
             <div class="infor-price">
-              <div class="infor-money">￥68</div>
+              <div class="infor-money">￥{{goods.count}}</div>
               <div class="number">
-                <table>
+                <table class="number-tab">
                 <th>
-                  <td>-</td>
-                  <td>1</td>
-                  <td>+</td>
+                  <td @click="handleReducer()">-</td>
+                  <td>{{goods.goodsNum}}</td>
+                  <td @click="handleAdd()">+</td>
                 </th>
                 </table>
               </div>
@@ -40,7 +40,7 @@
       <div class="cart-bottom">
         <div class="cicle2"></div>
         <div class="add">
-          <div class="add-to">合计:<span>￥0</span></div>
+          <div class="add-to">合计:<span>￥{{fee}}</span></div>
           <div class="close">结算</div>
         </div>
       </div>
@@ -49,11 +49,50 @@
 
 <script>
 export default {
-  name: 'Cart'
+  name: 'Cart',
+  data() {
+    return{
+      isActive: false,
+      goods: {
+       goodsNum:1,
+       count: 68,
+       fee: 0
+      }
+    }
+  },
+  methods: {
+    handleReducer(){
+      if(this.goods.goodsNum>1){
+          this.goods.goodsNum--
+      }else{
+          this.goods.goodsNum = 1
+      }
+    },
+    handleAdd(){
+      this.goods.goodsNum++
+    },
+    addClass() {
+      // console.log("eeeeeeeeedcdcdcdcdcdcdc");
+      this.isActive = !this.isActive
+    }
+  },
+   computed:{
+     fee(){
+       let fee = 0;
+       if(!this.isActive){
+         return fee 
+       }else{
+         return fee = (( this.goods.goodsNum) * (this.goods.count))
+       }
+     }
+   }
 }
 </script>
 
 <style scope>
+.activeClass{
+  background-color: red;
+}
 #cart{
   background: #f3f3fd;
   height: 100%;
@@ -140,11 +179,12 @@ export default {
 table{
   border-collapse: collapse;
 }
-table, th,td{
+.number-tab th td{
   border: 1px solid #afa9a9;
   height: 20px;
-  width: 81px;
+  width: 30px;
   text-align: center;
+  line-height: 20px;
 }
 .cart-bottom{
   background: #fff;

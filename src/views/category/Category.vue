@@ -188,6 +188,7 @@ export default {
     background: aliceblue;
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
 }
 .left-item li{
   margin-left: 11px;
@@ -200,6 +201,10 @@ export default {
 }
 .category-left{
     width: 100px;
+    height: 100%;
+}
+.category-left ul{
+  height: 100%;
 }
 .category-right{
     overflow: auto;

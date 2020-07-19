@@ -323,6 +323,7 @@ td{
 }
 .tools-des{
   display: flex;
+  justify-content: space-around;
   margin-left: 15px;
 }
 .tools-des img{
